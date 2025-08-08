@@ -28,13 +28,25 @@
 # res = fact(n)
 # print("Factorial:", res)
 # f is used for the formatting the string 
-def sum(*elements):
-    res=0
-    for x in elements:
-        res=res+x
-    return res
+# def sum(*elements):
+#     res=0
+#     for x in elements:
+#         res=res+x
+#     return res
 
-print(sum(10,20))
-print(sum(10,20,30))
-print(sum(10))
-print (sum())
+# print(sum(10,20))
+# print(sum(10,20,30))
+# print(sum(10))
+# print (sum())
+# now we learn about the length Arugments
+# def printElements(*elements):
+#     print(elements)
+# printElements(101,"abc",100)
+# printElements(102,"gbc",200)
+# Variable- length arguments mean you can pass any number of arguments to a fucntion-not fixed in advanced
+# more examples
+def show_number(*nums):
+    print(nums)
+show_numbers(1,2,3)   #(1,2,3)
+show_numbers(10,20)  # (10,20)
+show_numbers(5)
