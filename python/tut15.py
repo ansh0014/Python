@@ -45,8 +45,66 @@
 # printElements(102,"gbc",200)
 # Variable- length arguments mean you can pass any number of arguments to a fucntion-not fixed in advanced
 # more examples
-def show_number(*nums):
-    print(nums)
-show_numbers(1,2,3)   #(1,2,3)
-show_numbers(10,20)  # (10,20)
-show_numbers(5)
+# def show_number(*nums):
+#     print(nums)
+# show_numbers(1,2,3)   #(1,2,3)
+# show_numbers(10,20)  # (10,20)
+# show_numbers(5)
+# ** Kwargs variable length keyword arugments
+"""
+📌 Variable-Length Keyword Arguments (**kwargs) and .items()
+
+1. **kwargs in a function definition allows it to accept any number
+   of keyword arguments. All keyword arguments are packed into a
+   dictionary where:
+      - Keys   → argument names
+      - Values → argument values
+
+   Example:
+       def func(**data):
+           print(data)
+
+       func(name="Anshul", age=21)
+       # data = {'name': 'Anshul', 'age': 21}
+
+2. The .items() method:
+   - Belongs to the built-in dict (dictionary) class in Python.
+   - Returns all dictionary key-value pairs as tuples in a special
+     view object called dict_items.
+
+   Example:
+       data = {'name': 'Anshul', 'age': 21}
+       print(data.items())
+       # dict_items([('name', 'Anshul'), ('age', 21)])
+
+3. Why use for key, value in data.items():
+   - Iterates over each (key, value) tuple from the dictionary.
+   - Unpacks each tuple into variables 'key' and 'value' inside the loop.
+
+4. The dot (.) operator in Python:
+   - Works like in C++/Java: used to access attributes or methods of an object.
+   - Here, 'data' is a dictionary object, and 'items' is one of its methods.
+   - Writing data.items() means: call the 'items()' method of the dictionary object 'data'.
+"""
+
+# collect extra keyword 
+# collect extra keyword arguments using **details
+def student_profile(**details):
+    print("Student Profile")
+
+    # details is a dictionary containing all keyword arguments
+    # .items() is a built-in dictionary method that returns
+    # all key-value pairs as tuples in a special 'dict_items' view object.
+    # Example: if details = {"name": "Anshul", "age": 21}
+    # then details.items() = dict_items([('name', 'Anshul'), ('age', 21)])
+    # The for loop unpacks each (key, value) tuple into variables
+    # 'key' and 'value' so they can be used directly in the loop.
+    for key, value in details.items():
+        print(f"{key.capitalize()}:{value}")
+
+# passing different keyword arguments
+student_profile(name="Asnhul", age=21, course="B.Tech", city="Delhi")
+print()
+student_profile(name="Priya", course="MCA", gpa=9.1)
+
+# **details  → dictionary  → .items()  → (key, value) in loop
